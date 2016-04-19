@@ -1,18 +1,21 @@
----
-layout: default
-title: 杜来墨的博客
----
+<html>
+  <head>
+    <meta name="baidu-site-verification" content="k2vvKmB9O4" />
+    <title>杜来墨的博客</title>
+  </head>
 
-<h2>{{ page.title }}</h2>
+  <body>
+    <p> 最新文章</p>
 
-<p> 最新文章</p>
+    <ul>
 
-<ul>
+      {% for post in site.posts %}
 
-  {% for post in site.posts %}
+        <li style="margin-bottom:10px">{{ post.date | date_to_string }} <a href="{{ CNAME.url }}{{ post.url }}">{{ post.title }}</a></li>
 
-    <li style="margin-bottom:10px">{{ post.date | date_to_string }} <a href="{{ CNAME.url }}{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
 
-    {% endfor %}
+    </ul>
 
-</ul>
+  </body>
+  </html>
