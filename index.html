@@ -1,23 +1,17 @@
-<html>
-  <head>
-    <title>杜来墨的博客</title>
+---
+layout: default
+title: 杜来墨官方博客
+---
 
-    <meta name="baidu-site-verification" content="k2vvKmB9O4" />
+<h2>{{ page.title }}</h2>
 
-  </head>
+<p>最新文章</p>
 
-  <body>
-    <p> 最新文章</p>
+<ul>
 
-    <ul>
+	{% for post in site.posts %}
 
-      {% for post in site.posts %}
-
-        <li style="margin-bottom:10px">{{ post.date | date_to_string }} <a href="{{ CNAME.url }}{{ post.url }}">{{ post.title }}</a></li>
-
-        {% endfor %}
-
-    </ul>
-
-  </body>
-  </html>
+		<li>{{ post.date | date_to_string }}<a href="{{ site.baseurl }}{{post.url }}">{{ post.title }}</a></li>
+	{% endfor %}
+</ul>
+Status API Training Shop Blog About
